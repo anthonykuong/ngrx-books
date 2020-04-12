@@ -1,0 +1,8 @@
+/dist
+/modules/schematics/src/*/files/*
+/modules/**/schematics/**/files/*
+/tmp
+/projects/ngrx.io
+package-lock.json
+package.json
+yarn.lock

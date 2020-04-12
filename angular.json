@@ -1,0 +1,104 @@
+{
+  "$schema":
+    "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "defaultProject": "ngrx-books",
+  "projects": {
+    "ngrx-books": {
+      "root": "",
+      "sourceRoot": "projects/ngrx-books/src",
+      "projectType": "application",
+      "prefix": "bc",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "aot": true,
+            "outputPath": "projects/ngrx-books/dist",
+            "index": "projects/ngrx-books/src/index.html",
+            "main": "projects/ngrx-books/src/main.ts",
+            "polyfills": "projects/ngrx-books/src/polyfills.ts",
+            "tsConfig": "projects/ngrx-books/tsconfig.app.json",
+            "assets": [
+              "projects/ngrx-books/src/favicon.ico",
+              "projects/ngrx-books/src/assets"
+            ],
+            "styles": ["projects/ngrx-books/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace":
+                    "projects/ngrx-books/src/environments/environment.ts",
+                  "with":
+                    "projects/ngrx-books/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngrx-books:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngrx-books:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngrx-books:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngrx-books/tsconfig.app.json",
+              "projects/ngrx-books/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "flat": true,
+      "spec": false,
+      "prefix": "bc",
+      "style": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "bc"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}
