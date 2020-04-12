@@ -1,6 +1,5 @@
 {
-  "$schema":
-    "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "defaultProject": "ngrx-books",
@@ -25,7 +24,9 @@
               "projects/ngrx-books/src/favicon.ico",
               "projects/ngrx-books/src/assets"
             ],
-            "styles": ["projects/ngrx-books/src/styles.css"],
+            "styles": [
+              "projects/ngrx-books/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -38,10 +39,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace":
-                    "projects/ngrx-books/src/environments/environment.ts",
-                  "with":
-                    "projects/ngrx-books/src/environments/environment.prod.ts"
+                  "replace": "projects/ngrx-books/src/environments/environment.ts",
+                  "with": "projects/ngrx-books/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -79,8 +78,14 @@
               "projects/ngrx-books/tsconfig.app.json",
               "projects/ngrx-books/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }

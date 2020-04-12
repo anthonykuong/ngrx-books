@@ -1,10 +1,19 @@
-# @ngrx example application
+# @ngrx book-app application
 
-Example application utilizing @ngrx libraries, showcasing common patterns and best practices. Try it on [StackBlitz](https://ngrx.github.io/platform/stackblitz.html).
+Sample NGRX-books app -https://anthonykuong.github.io/ngrx-books/#/login
 
-This app is a book collection manager. The user can authenticate, use the Google Books API to search for
+
+I'm using this example application utilizing @ngrx libraries, 
+to practice  common patterns and best practices.  This app is a book collection manager. 
+The user can authenticate, use the Google Books API to search for
 books and add them to their collection. This application utilizes [@ngrx/store](https://ngrx.io/guide/store) to manage
 the state of the app and to cache requests made to the Google Books API;
+
+NGRX-books app -https://anthonykuong.github.io/ngrx-books/#/login
+
+Anthony
+
+
 [@ngrx/effects](https://ngrx.io/guide/effects) to isolate side effects; [@angular/router](https://angular.io/guide/router) to manage navigation between routes; [@angular/material](https://github.com/angular/material2) to provide design and styling.
 
 Built with [@angular/cli](https://github.com/angular/angular-cli)
@@ -19,6 +28,29 @@ Built with [@angular/cli](https://github.com/angular/angular-cli)
 - [@angular/router](https://angular.io/guide/router) - Angular Router
 - [@angular/material](https://github.com/angular/material2) - Angular Material
 - [jest](https://facebook.github.io/jest/) - JavaScript test runner with easy setup, isolated browser testing and snapshot testing
+
+###publish on github
+
+```bash
+
+#install globally
+npm install -g angular-cli-ghpages
+
+#use angular cli wito build project with the correct base href
+ng build --prod --base-href "<repo-name>"
+
+#shorthand
+you can use ngh
+
+# you can specify branch to deploy
+ngh --branch=production
+
+# dry run
+ngh --dry-run
+
+```
+
+
 
 ### Quick start
 
