@@ -14,7 +14,6 @@ import * as fromBooks from '@example-app/books/reducers';
     <mat-card>
       <mat-card-title>My Collection</mat-card-title>
     </mat-card>
-
     <bc-book-preview-list [books]="books$ | async"></bc-book-preview-list>
   `,
   /**

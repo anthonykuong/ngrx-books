@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '@example-app/auth/services';
 import { NotFoundPageComponent } from '@example-app/core/containers';
+import {FindBookPageComponent} from "@example-app/books/containers";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' },

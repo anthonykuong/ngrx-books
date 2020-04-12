@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -23,11 +23,21 @@ import * as fromBooks from '@example-app/books/reducers';
     </bc-book-preview-list>
   `,
 })
-export class FindBookPageComponent {
+export class FindBookPageComponent implements OnInit {
+
+
   searchQuery$: Observable<string>;
   books$: Observable<Book[]>;
   loading$: Observable<boolean>;
   error$: Observable<string>;
+  private defaultSearch:string = 'coronavirus';
+
+  ngOnInit() {
+     this.searchQuery$.subscribe({
+       next: value => console.log(value), // 1
+     });
+     this.search(this.defaultSearch);
+  }
 
   constructor(private store: Store<fromBooks.State>) {
     this.searchQuery$ = store.pipe(
@@ -40,6 +50,6 @@ export class FindBookPageComponent {
   }
 
   search(query: string) {
-    this.store.dispatch(FindBookPageActions.searchBooks({ query }));
+    this.store.dispatch(FindBookPageActions.searchBooks({query}));
   }
 }

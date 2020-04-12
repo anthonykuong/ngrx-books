@@ -10,6 +10,11 @@ import { BookExistsGuard } from '@example-app/books/guards';
 
 export const routes: Routes = [
   {
+    path: 'collection',
+    component: CollectionPageComponent,
+    data: { title: 'Collection' },
+  },
+  {
     path: 'find',
     component: FindBookPageComponent,
     data: { title: 'Find book' },
@@ -17,13 +22,13 @@ export const routes: Routes = [
   {
     path: ':id',
     component: ViewBookPageComponent,
-    canActivate: [BookExistsGuard],
+   // canActivate: [BookExistsGuard],
     data: { title: 'Book details' },
   },
   {
     path: '',
-    component: CollectionPageComponent,
-    data: { title: 'Collection' },
+    component: FindBookPageComponent,
+    data: { title: 'Find book' },
   },
 ];
 

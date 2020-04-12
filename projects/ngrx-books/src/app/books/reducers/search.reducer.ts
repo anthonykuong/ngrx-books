@@ -17,7 +17,7 @@ const initialState: State = {
   ids: [],
   loading: false,
   error: '',
-  query: '',
+  query: 'one',
 };
 
 export const reducer = createReducer(
