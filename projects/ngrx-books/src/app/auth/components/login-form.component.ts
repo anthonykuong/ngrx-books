@@ -10,7 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
     
     <mat-card>
       <mat-card-title>
-        <img src ="../../../assets/images/anthonykuong.JPG">
+        <img src ="https://raw.githubusercontent.com/anthonykuong/ngrx-books/master/projects/ngrx-books/src/assets/images/anthonykuong.JPG">
       </mat-card-title>
 
       <mat-card-subtitle>

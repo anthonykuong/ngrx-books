@@ -10,7 +10,7 @@ import { LayoutActions } from '@example-app/core/actions';
 @Component({
   selector: 'bc-app',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+  template: \`
     <bc-layout>
       <bc-sidenav [open]="showSidenav$ | async" (closeMenu)="closeSidenav()">
         <bc-nav-item (navigate)="closeSidenav()" *ngIf="loggedIn$ | async" routerLink="/books/find" icon="search" hint="Find your next book!">
